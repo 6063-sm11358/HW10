@@ -7,6 +7,7 @@ void setup() {
   pinMode(4,OUTPUT);
   pinMode(5,OUTPUT);
   pinMode(6,OUTPUT);
+  pinMode(8,OUTPUT);
 }
 
 void loop() {
@@ -16,19 +17,23 @@ void loop() {
 
   if(timeKeep>=10)
   {
-    digitalWrite(2,HIGH);
+    digitalWrite(8,HIGH);
     if(timeKeep>=20)
     {
-      digitalWrite(3,HIGH);
+      digitalWrite(6,HIGH);
       if(timeKeep>=30)
       {
-        digitalWrite(4,HIGH);
+        digitalWrite(5,HIGH);
         if(timeKeep>=40)
         {
-          digitalWrite(5,HIGH);
+          digitalWrite(4,HIGH);
           if(timeKeep>=50)
           {
-            digitalWrite(6,HIGH);
+            digitalWrite(3,HIGH);
+            if(timeKeep>=59)
+            {
+              digitalWrite(2,HIGH);
+            }
           }
         }
       }
@@ -36,6 +41,7 @@ void loop() {
   }
   else
   {
+    digitalWrite(8,LOW);
     digitalWrite(2,LOW);
     digitalWrite(3,LOW);
     digitalWrite(4,LOW);
